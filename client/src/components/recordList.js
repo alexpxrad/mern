@@ -41,7 +41,7 @@ export default function RecordList() {
         await fetch(`http://localhost:3030/${id}`, {
             method: "DELETE"
         });
-        const newRecords = records.filter((e) => el._id !== id);
+        const newRecords = records.filter((el) => el._id !== id);
         setRecords(newRecords);
     }
     //This method will map out the records on the table 
@@ -69,7 +69,8 @@ export default function RecordList() {
                         <th>Action</th>
                     </tr>
                 </thead>
+                <tbody>{recordList()}</tbody>
             </table>
         </div>
-    )
+    );
 }

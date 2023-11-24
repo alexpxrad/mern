@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router";
 
-export default function edit() {
-    const [form, setForm] =useState({
+export default function Edit() {
+    const [form, setForm] = useState({
         name: "",
         position: "",
         department: "",
@@ -45,7 +45,7 @@ export default function edit() {
             };
             //This will send a post request to update the data in the database
             await fetch(`http://localhost:3030/update/${params.id}`, {
-                method: 'Post',
+                method: 'POST',
                 body: JSON.stringify(editedPerson),
                 headers: {
                     'Content-Type': 'application/json',
